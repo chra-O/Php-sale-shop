@@ -9,21 +9,22 @@ $password =$_POST['password'];
 if(empty($username)|| empty($password)){
   echo "<p class='alert alert-warning  p-3 m-4 container font-weight-bold text-danger'>  MISSed fild! And refresh the page  </p>";
 }else{
-  $query = mysqli_query( $db ," SELECT * FROM admin WHERE `username`='$username' AND `password`='$password'");
+  $query = mysqli_query( $db ," SELECT * FROM admin WHERE  `username`='$username' AND `password`='$password'");
  
   if(mysqli_num_rows($query) == 1) {
     while($row  =mysqli_fetch_assoc($query)){
       $_SESSION['admin'] = x($row['id']);
     
-      $_SESSION['username']=x($row ['username']);
+      $_SESSION['chra']=x($row ['zheer']);
     }
-    header("location:index.php");
+    header("location:maw3id w dlary ");
   }else{
     header("location:login.php");
   }
  
-}
+} 
 
+ 
 }
 ?>
 
